@@ -1,8 +1,8 @@
-import { useForm } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 import styles from './Authorization.module.scss';
 
 function Authorization() {
-  const { register, handleSubmit, formState: { errors }, reset } = useForm();
+  const { register, handleSubmit, formState: { errors }, reset, control } = useForm();
   const onSubmit = (data: any) => {
     console.log(data);
     reset();
@@ -22,6 +22,13 @@ function Authorization() {
             pattern: /^(([^<>()[\]\\.,;:/s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1-3}\.[0-9]{1-3}\.[0-9]{1.3}\.[0-9]{1-3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
           })} />
           {errors?.email && <p>Please enter valid email!</p>}
+
+          <Controller
+            name='country'
+            rules={{ required: true }}
+            control={control}
+            render={({ field, fieldState: { error } }) => <></>}
+          />
 
           <button>Submit</button>
         </form>
