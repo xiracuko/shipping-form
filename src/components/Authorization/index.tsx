@@ -1,10 +1,22 @@
+import { useForm } from 'react-hook-form';
 import styles from './Authorization.module.scss';
 
 function Authorization() {
+  const {register, handleSubmit} = useForm();
+  const onSubmit = (data: any) => console.log(data);
 
   return (
-    <div>Authorization</div>
+    <div className="container">
+      <div className={styles.authBlock}>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <input type="text" {...register('name', {
+
+          })} />
+        </form>
+      </div>
+    </div>
   )
 }
 
 export default Authorization
+// #0c060e
