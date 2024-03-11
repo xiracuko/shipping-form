@@ -36,49 +36,52 @@ function Authorization() {
     <div className="container">
       <div className={styles.authBlock}>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <input
-            type="text"
-            placeholder='Full name'
-            {...register('name', { required: true })}
-          />
-          {errors?.name && <p>Please enter name!</p>}
+          <div className={styles.userInfo}>
+            <input
+              type="text"
+              placeholder='Full name'
+              {...register('name', { required: true })}
+            />
+            {errors?.name && <p>Please enter name!</p>}
 
-          <input
-            type="text"
-            placeholder='Email'
-            {...register('email', {
-              required: true,
-              pattern: /^(([^<>()[\]\\.,;:/s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1-3}\.[0-9]{1-3}\.[0-9]{1.3}\.[0-9]{1-3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-            })}
-          />
-          {errors?.email && <p>Please enter valid email!</p>}
+            <input
+              type="text"
+              placeholder='Email'
+              {...register('email', {
+                required: true,
+                pattern: /^(([^<>()[\]\\.,;:/s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1-3}\.[0-9]{1-3}\.[0-9]{1.3}\.[0-9]{1-3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+              })}
+            />
+            {errors?.email && <p>Please enter valid email!</p>}
+          </div>
 
-          <Controller
-            name='country'
-            rules={{ required: true }}
-            control={control}
-            render={({ field: { onChange, value }, fieldState: { error } }) =>
-              <>
-                <ReactSelect
-                  options={options}
-                  isClearable
-                  isSearchable
-                  value={getValue(value)}
-                  onChange={(newValue) => onChange((newValue))}
-                  components={animatedComponents}
-                  classNamePrefix="custom-select"
-                  placeholder="Country"
-                />
-                {error && <p>Please select your country!</p>}
-              </>}
-          />
+          <div className={styles.address}>
+            <Controller
+              name='country'
+              rules={{ required: true }}
+              control={control}
+              render={({ field: { onChange, value }, fieldState: { error } }) =>
+                <>
+                  <ReactSelect
+                    options={options}
+                    isClearable
+                    isSearchable
+                    value={getValue(value)}
+                    onChange={(newValue) => onChange((newValue))}
+                    components={animatedComponents}
+                    classNamePrefix="custom-select"
+                    placeholder="Country"
+                  />
+                  {error && <p>Please select your country!</p>}
+                </>}
+            />
 
-          <input
-            type="text"
-            placeholder='City'
-            {...register('city')}
-          />
-
+            <input
+              type="text"
+              placeholder='City'
+              {...register('city')}
+            />
+          </div>
           <button>Submit</button>
         </form>
       </div>
