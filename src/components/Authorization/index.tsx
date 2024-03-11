@@ -1,5 +1,24 @@
 import { useForm, Controller } from 'react-hook-form';
 import styles from './Authorization.module.scss';
+import ReactSelect from 'react-select';
+
+const options = [{
+  value: 'rus',
+  label: 'Russia'
+},
+{
+  value: 'eng',
+  label: 'USA',
+},
+{
+  value: 'jpn',
+  label: "Japan"
+},
+{
+  value: 'nor',
+  label: 'Norway'
+}
+]
 
 function Authorization() {
   const { register, handleSubmit, formState: { errors }, reset, control } = useForm();
@@ -27,7 +46,10 @@ function Authorization() {
             name='country'
             rules={{ required: true }}
             control={control}
-            render={({ field, fieldState: { error } }) => <></>}
+            render={({ field, fieldState: { error } }) =>
+              <>
+                <ReactSelect options={options} />
+              </>}
           />
 
           <button>Submit</button>
