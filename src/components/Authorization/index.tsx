@@ -24,7 +24,7 @@ const animatedComponents = makeAnimated();
 
 function Authorization() {
   const { register, handleSubmit, formState: { errors }, reset, control } = useForm();
-  
+
   const onSubmit = (data: any) => {
     console.log(data);
     reset();
@@ -36,18 +36,18 @@ function Authorization() {
     <div className="container">
       <div className={styles.authBlock}>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <input 
-            type="text" 
+          <input
+            type="text"
             placeholder='Full name'
-            {...register('name', {required: true})} 
+            {...register('name', { required: true })}
           />
           {errors?.name && <p>Please enter name!</p>}
 
-          <input 
-            type="text" 
+          <input
+            type="text"
             placeholder='Email'
             {...register('email', {
-              required: true, 
+              required: true,
               pattern: /^(([^<>()[\]\\.,;:/s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1-3}\.[0-9]{1-3}\.[0-9]{1.3}\.[0-9]{1-3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
             })}
           />
@@ -57,10 +57,10 @@ function Authorization() {
             name='country'
             rules={{ required: true }}
             control={control}
-            render={({ field: {onChange, value}, fieldState: { error } }) =>
+            render={({ field: { onChange, value }, fieldState: { error } }) =>
               <>
-                <ReactSelect 
-                  options={options} 
+                <ReactSelect
+                  options={options}
                   isClearable
                   isSearchable
                   value={getValue(value)}
@@ -71,6 +71,12 @@ function Authorization() {
                 />
                 {error && <p>Please select your country!</p>}
               </>}
+          />
+
+          <input
+            type="text"
+            placeholder='City'
+            {...register('city')}
           />
 
           <button>Submit</button>
