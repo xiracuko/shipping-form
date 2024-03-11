@@ -2,8 +2,11 @@ import { useForm } from 'react-hook-form';
 import styles from './Authorization.module.scss';
 
 function Authorization() {
-  const { register, handleSubmit, formState: { errors } } = useForm();
-  const onSubmit = (data: any) => console.log(data);
+  const { register, handleSubmit, formState: { errors }, reset } = useForm();
+  const onSubmit = (data: any) => {
+    console.log(data);
+    reset();
+  }
 
   return (
     <div className="container">
