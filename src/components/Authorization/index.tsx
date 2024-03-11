@@ -36,15 +36,21 @@ function Authorization() {
     <div className="container">
       <div className={styles.authBlock}>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <input type="text" {...register('name', {
-            required: true,
-          })} />
+          <input 
+            type="text" 
+            placeholder='Full name'
+            {...register('name', {required: true})} 
+          />
           {errors?.name && <p>Please enter name!</p>}
 
-          <input type="text" {...register('email', {
-            required: true,
-            pattern: /^(([^<>()[\]\\.,;:/s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1-3}\.[0-9]{1-3}\.[0-9]{1.3}\.[0-9]{1-3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-          })} />
+          <input 
+            type="text" 
+            placeholder='Email'
+            {...register('email', {
+              required: true, 
+              pattern: /^(([^<>()[\]\\.,;:/s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1-3}\.[0-9]{1-3}\.[0-9]{1.3}\.[0-9]{1-3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            })}
+          />
           {errors?.email && <p>Please enter valid email!</p>}
 
           <Controller
@@ -62,7 +68,7 @@ function Authorization() {
                   components={animatedComponents}
                   closeMenuOnSelect={false}
                   classNamePrefix="custom-select"
-                  placeholder="Select your country"
+                  placeholder="Country/Countries"
                 />
                 {error && <p>Please select your country!</p>}
               </>}
