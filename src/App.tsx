@@ -1,9 +1,16 @@
+import { Route, Routes } from 'react-router-dom';
 import './scss/styles.scss';
 
 function App() {
 
   return (
-    <div className="app"></div>
+    <div className="app">
+      <Routes>
+        <Route path='/*'>
+          <Route path='home' />
+        </Route>
+      </Routes>
+    </div>
   )
 }
 
