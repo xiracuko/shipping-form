@@ -54,21 +54,20 @@ function Authorization() {
           {errors?.email && <p>Please enter valid email!</p>}
 
           <Controller
-            name='countries'
+            name='country'
             rules={{ required: true }}
             control={control}
             render={({ field: {onChange, value}, fieldState: { error } }) =>
               <>
                 <ReactSelect 
                   options={options} 
-                  isClearable 
-                  isMulti 
+                  isClearable
+                  isSearchable
                   value={getValue(value)}
                   onChange={(newValue) => onChange((newValue))}
                   components={animatedComponents}
-                  closeMenuOnSelect={false}
                   classNamePrefix="custom-select"
-                  placeholder="Country/Countries"
+                  placeholder="Country"
                 />
                 {error && <p>Please select your country!</p>}
               </>}
