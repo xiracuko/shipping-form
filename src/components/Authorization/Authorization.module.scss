@@ -2,13 +2,23 @@
   width: 750px;
   height: 500px;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+
   background: rgb(28 28 28);
-  border-radius: 5px;
+  border-radius: 5px 50px;
+
+  h2 {
+    font-size: 40px;
+    text-align: center;
+  }
 }
 
 form {
   width: 600px;
-  height: 500px;
+  height: 250px;
 
   display: flex;
   flex-direction: column;
@@ -16,6 +26,7 @@ form {
   justify-content: center;
   gap: 15px;
 
+  position: relative;
   margin: 0 auto;
 }
 
@@ -52,7 +63,7 @@ form {
 }
 
 .custom-select {
-  font-size: 16px !important; 
+  font-size: 16px !important;
 
   &__control {
     cursor: pointer !important;
@@ -91,7 +102,7 @@ form {
   }
 
   &__menu {
-    background-color: #165636 !important;
+    background-color: lighten($color: rgb(28, 28, 28), $amount: 5%) !important;
   }
 
   &__multi-value__remove {
@@ -102,19 +113,41 @@ form {
     cursor: pointer !important;
 
     &--is-focused {
-      background-color: lighten($color: #165636c6, $amount: 5%) !important;
+      background-color: #165636 !important;
     }
 
     &--is-selected {
-      background-color: darken($color: #165636c6, $amount: 5%) !important;
+      background-color: darken($color: #165636, $amount: 5%) !important;
+      pointer-events: none !important;
+      cursor: not-allowed !important;
     }
   }
 
   &__single-value {
     color: white !important;
 
-    font-size: 16px;
+    font-size: 18px;
   }
+}
+
+.errorI,
+.errorII,
+.errorIII {
+  position: absolute;
+  color: #a11b04;
+}
+
+.errorI {
+  right: 0;
+  top: 28px;
+}
+.errorII {
+  right: 0;
+  top: 78px;
+}
+.errorIII {
+  left: 56px;
+  bottom: 70px;
 }
 
 .cityInput {
@@ -126,6 +159,7 @@ form {
 
   border: none;
   border-bottom: 1px gray solid;
+  color: white;
 }
 
 input:focus {
@@ -139,6 +173,7 @@ input:focus {
   cursor: pointer;
   width: 100%;
   height: 50px;
+  margin-top: 15px;
 
   background: #165636;
   color: white;

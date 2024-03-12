@@ -35,24 +35,29 @@ function Authorization() {
   return (
     <div className="container">
       <div className={styles.authBlock}>
+        <h2>Shipping Form</h2>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className={styles.userInfo}>
             <input
               type="text"
+              autoComplete='off'
+              spellCheck={false}
               placeholder='Full name'
               {...register('name', { required: true })}
             />
-            {errors?.name && <p>Please enter name!</p>}
+            {errors?.name && <p className={styles.errorI}>Please enter name!</p>}
 
             <input
               type="text"
+              autoComplete='off'
+              spellCheck={false}
               placeholder='Email'
               {...register('email', {
                 required: true,
                 pattern: /^(([^<>()[\]\\.,;:/s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1-3}\.[0-9]{1-3}\.[0-9]{1.3}\.[0-9]{1-3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
               })}
             />
-            {errors?.email && <p>Please enter valid email!</p>}
+            {errors?.email && <p className={styles.errorII}>Please enter valid email!</p>}
           </div>
 
           <div className={styles.address}>
@@ -73,13 +78,14 @@ function Authorization() {
                     components={animatedComponents}
                     placeholder="Country"
                   />
-                  {error && <p>Please select your country!</p>}
+                  {error && <p className={styles.errorIII}>Please select your country!</p>}
                 </div>}
             />
 
             <input
               className={styles.cityInput}
               type="text"
+              autoComplete='off'
               placeholder='City'
               {...register('city')}
             />
