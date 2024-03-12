@@ -9,7 +9,7 @@ const options = [{
 },
 {
   value: 'eng',
-  label: 'USA',
+  label: 'United States',
 },
 {
   value: 'jpn',
@@ -61,28 +61,30 @@ function Authorization() {
               rules={{ required: true }}
               control={control}
               render={({ field: { onChange, value }, fieldState: { error } }) =>
-                <>
+                <div className={styles.countryBlock}>
                   <ReactSelect
+                  className='custom-select'
+                    classNamePrefix="custom-select"
                     options={options}
                     isClearable
-                    isSearchable
+                    isSearchable={false}
                     value={getValue(value)}
                     onChange={(newValue) => onChange((newValue))}
                     components={animatedComponents}
-                    classNamePrefix="custom-select"
                     placeholder="Country"
                   />
                   {error && <p>Please select your country!</p>}
-                </>}
+                </div>}
             />
 
             <input
+              className={styles.cityInput}
               type="text"
               placeholder='City'
               {...register('city')}
             />
           </div>
-          <button>Submit</button>
+          <button className={styles.btnSubmit}>Submit</button>
         </form>
       </div>
     </div>
@@ -90,4 +92,3 @@ function Authorization() {
 }
 
 export default Authorization
-// #0c060e
