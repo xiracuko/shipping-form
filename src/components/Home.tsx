@@ -1,6 +1,11 @@
 function Home() {
   return (
-    <div>Home</div>
+    <div className="container">
+      <div className="block-title">
+        <h3>Успешный вход в систему!</h3>
+        <p>Добро пожаловать на сайт.</p>
+      </div>
+    </div>
   )
 }
 
