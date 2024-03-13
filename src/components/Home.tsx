@@ -4,8 +4,8 @@ const Home: React.FC = () => {
   return (
     <div className="container">
       <div className="block-title">
-        <h3>Успешный вход в систему!</h3>
-        <p>Добро пожаловать на сайт.</p>
+        <h3>Login successful!</h3>
+        <p>Welcome to the site.</p>
       </div>
     </div>
   )

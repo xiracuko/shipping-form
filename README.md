@@ -1,30 +1,19 @@
-# React + TypeScript + Vite
+# Shipping Form
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple form to fill out using several libraries:
+- React router v6
+- React Hook Form
+- React Select
 
-Currently, two official plugins are available:
+#### Why do we need a library "React router" in this project?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+It moves us to the main page (Home), if the following rules are met:
 
-## Expanding the ESLint configuration
+__1. Valid form filling (no errors):__
+![shipping form with errors](/shipping-form/src/assetsForGithub/Screenshot_4.jpg)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+__2. Button press "Submit":__
+![button submit](/shipping-form/src/assetsForGithub/Screenshot_3.jpg)
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Final result:
+![final result](/shipping-form/src/assetsForGithub/Screenshot_1.jpg)
