@@ -2,6 +2,7 @@ import styles from './Authorization.module.scss';
 import { useForm, Controller } from 'react-hook-form';
 import ReactSelect from 'react-select';
 import makeAnimated from 'react-select/animated';
+import { Navigate } from 'react-router-dom';
 
 const options = [{
   value: 'rus',
@@ -23,7 +24,7 @@ const options = [{
 const animatedComponents = makeAnimated();
 
 function Authorization() {
-  const { register, handleSubmit, formState: { errors }, reset, control } = useForm();
+  const { register, handleSubmit, formState: { errors, isSubmitSuccessful}, reset, control} = useForm();
 
   const onSubmit = (data: any) => {
     console.log(data);
@@ -68,7 +69,7 @@ function Authorization() {
               render={({ field: { onChange, value }, fieldState: { error } }) =>
                 <div className={styles.countryBlock}>
                   <ReactSelect
-                  className='custom-select'
+                    className='custom-select'
                     classNamePrefix="custom-select"
                     options={options}
                     isClearable
@@ -91,6 +92,8 @@ function Authorization() {
             />
           </div>
           <button className={styles.btnSubmit}>Submit</button>
+
+          { isSubmitSuccessful ? <Navigate to="home"/> : "" }
         </form>
       </div>
     </div>
