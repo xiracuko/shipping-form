@@ -7,12 +7,14 @@ A simple form to fill out using several libraries:
 
 #### Why do we need a library "React router" in this project?
 
-It moves us to the main page (Home), if the following rules are met:
+It moves us to the main page (__Home__), if the following rules are met:
 
-__1. Valid form filling (no errors):__
+>__1. Valid form filling (no errors):__
+
 ![shipping form with errors](/shipping-form/src/assetsForGithub/Screenshot_4.jpg)
 
-__2. Button press "Submit":__
+>__2. Button press "Submit":__
+
 ![button submit](/shipping-form/src/assetsForGithub/Screenshot_3.jpg)
 
 ### Final result:
