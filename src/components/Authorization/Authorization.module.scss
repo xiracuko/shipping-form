@@ -14,6 +14,14 @@
     font-size: 40px;
     text-align: center;
   }
+
+  @media (max-width: 780px) {
+    width: 450px;
+  }
+
+  @media (max-width: 500px) {
+    width: 300px;
+  }
 }
 
 form {
@@ -28,6 +36,14 @@ form {
 
   position: relative;
   margin: 0 auto;
+
+  @media (max-width: 780px) {
+    width: 300px;
+  }
+
+  @media (max-width: 500px) {
+    width: 250px;
+  }
 }
 
 .userInfo {
