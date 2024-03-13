@@ -11,11 +11,11 @@ It moves us to the main page (__Home__), if the following rules are met:
 
 >__1. Valid form filling (no errors):__
 
-![shipping form with errors](/shipping-form/src/assetsForGithub/Screenshot_4.jpg)
+![shipping form with errors](./src/assetsForGithub/Screenshot_4.jpg)
 
 >__2. Button press "Submit":__
 
-![button submit](/shipping-form/src/assetsForGithub/Screenshot_3.jpg)
+![button submit](./src/assetsForGithub/Screenshot_3.jpg)
 
 ### Final result:
-![final result](/shipping-form/src/assetsForGithub/Screenshot_1.jpg)
+![final result](./src/assetsForGithub/Screenshot_1.jpg)
