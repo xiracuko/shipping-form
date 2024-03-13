@@ -1,4 +1,6 @@
-function Home() {
+
+const Home: React.FC = () => {
+  
   return (
     <div className="container">
       <div className="block-title">

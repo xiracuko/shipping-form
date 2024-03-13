@@ -1,10 +1,11 @@
 import styles from './Authorization.module.scss';
-import { useForm, Controller } from 'react-hook-form';
+import { useForm, Controller, SubmitHandler } from 'react-hook-form';
 import ReactSelect from 'react-select';
 import makeAnimated from 'react-select/animated';
 import { Navigate } from 'react-router-dom';
+import { FormValuesType, OptionsType } from '../../app.type';
 
-const options = [{
+const options: OptionsType[] = [{
   value: 'rus',
   label: 'Russia'
 },
@@ -23,15 +24,15 @@ const options = [{
 
 const animatedComponents = makeAnimated();
 
-function Authorization() {
-  const { register, handleSubmit, formState: { errors, isSubmitSuccessful}, reset, control} = useForm();
+const Authorization: React.FC = () => {
+  const { register, handleSubmit, formState: { errors, isSubmitSuccessful }, reset, control } = useForm<FormValuesType>();
 
-  const onSubmit = (data: any) => {
+  const onSubmit: SubmitHandler<FormValuesType> = (data) => {
     console.log(data);
     reset();
   }
 
-  const getValue = (value: any) => value ? options.find((option) => option.value === value) : "";
+  const getValue = (value: string) => value ? options.find((option) => option.value === value) : "";
 
   return (
     <div className="container">
@@ -93,7 +94,7 @@ function Authorization() {
           </div>
           <button className={styles.btnSubmit}>Submit</button>
 
-          { isSubmitSuccessful ? <Navigate to="home"/> : "" }
+          {isSubmitSuccessful ? <Navigate to="home" /> : ""}
         </form>
       </div>
     </div>
