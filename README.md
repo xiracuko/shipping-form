@@ -1,6 +1,7 @@
 # Shipping Form
 
 A simple form to fill out using several libraries:
+- React
 - React router v6
 - React Hook Form
 - React Select
